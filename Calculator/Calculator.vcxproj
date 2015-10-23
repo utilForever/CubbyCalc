@@ -146,6 +146,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Expression.h" />
+    <ClInclude Include="ExpressionMaker.h" />
+    <ClInclude Include="ExpressionTree.h" />
+    <ClInclude Include="VariableTable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Expression.cpp" />
+    <ClCompile Include="ExpressionMaker.cpp" />
+    <ClCompile Include="VariableTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
