@@ -150,11 +150,16 @@
     <ClInclude Include="Expression.h" />
     <ClInclude Include="ExpressionMaker.h" />
     <ClInclude Include="ExpressionTree.h" />
+    <ClInclude Include="ExpressionUtil.h" />
     <ClInclude Include="VariableTable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="CalculatorTest.cpp" />
     <ClCompile Include="Expression.cpp" />
     <ClCompile Include="ExpressionMaker.cpp" />
+    <ClCompile Include="ExpressionTree.cpp" />
+    <ClCompile Include="ExpressionUtil.cpp" />
     <ClCompile Include="VariableTable.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
