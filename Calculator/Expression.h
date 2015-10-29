@@ -33,6 +33,7 @@ public:
 	std::string GetInfix() const;
 	void Swap(Expression&);
 	bool Empty() const;
+	bool TopNodeIsAssign() const;
 };
 
 #endif

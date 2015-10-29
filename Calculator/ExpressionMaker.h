@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 
+#include "VariableTable.h"
 #include "Expression.h"
 #include "ExpressionTree.h"
 
@@ -20,11 +21,12 @@ private:
 	bool m_isTreeGenerated;
 	std::string m_postfix;
 	Expression m_internalExpression;
+	VariableTable& m_varTable;
 
 	ExpressionTree* MakeExpressionTree(const std::string&);
 
 public:
-	ExpressionMaker();
+	ExpressionMaker(VariableTable&);
 	~ExpressionMaker();
 
 	Expression GetExpression();

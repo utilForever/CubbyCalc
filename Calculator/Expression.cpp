@@ -5,6 +5,7 @@
 #include "ExpressionTree.h"
 
 Expression::Expression(ExpressionTree* expTree)
+	: m_topNode(expTree)
 { }
 
 Expression::~Expression()
@@ -85,4 +86,9 @@ void Expression::Swap(Expression& exp)
 bool Expression::Empty() const
 {
 	return !m_topNode;
+}
+
+bool Expression::TopNodeIsAssign() const
+{
+	return dynamic_cast<Assign*>(m_topNode);
 }

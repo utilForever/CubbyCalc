@@ -4,7 +4,7 @@
 
 #include "VariableTable.h"
 
-using variable_table = std::map<std::string, double>;
+typedef std::map<std::string, double> variable_table;
 
 VariableTable::VariableTable()
 { }

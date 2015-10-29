@@ -21,7 +21,7 @@ namespace
 	const std::string identifier_chars("abcdefghijklmnopqrstuvwxyz");
 	const std::string operand_chars(identifier_chars + digits + '.');
 
-	using priority_table = std::map<std::string, int>;
+	typedef std::map<std::string, int> priority_table;
 
 	priority_table init_priority_table(const char* ops[], const int* priority, const int n_ops)
 	{
@@ -39,8 +39,8 @@ namespace
 	const priority_table stack_priority = init_priority_table(ops, init_stack_priority, n_ops);
 }
 
-ExpressionMaker::ExpressionMaker()
-	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression()
+ExpressionMaker::ExpressionMaker(VariableTable& varTable)
+	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression(), m_varTable(varTable)
 { }
 
 ExpressionMaker::~ExpressionMaker()
@@ -80,37 +80,86 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 		{
 			ExpressionTree* rhs = treeStack.top();
 			treeStack.pop();
-			ExpressionTree* lhs = treeStack.top();
-			treeStack.pop();
 
-			if (token == "^")
+			// Unary
+			if (std::find(operators.begin(), operators.end(), treeStack.top()->ToString()) != operators.end())
 			{
-				treeStack.push(new Power(lhs, rhs));
+				if (token == "-")
+				{
+					treeStack.push(new UnaryMinus(rhs));
+				}
 			}
-			else if (token == "*")
+			// Binary
+			else
 			{
-				treeStack.push(new Multiply(lhs, rhs));
-			}
-			else if (token == "/")
-			{
-				treeStack.push(new Divide(lhs, rhs));
-			}
-			else if (token == "+")
-			{
-				treeStack.push(new Plus(lhs, rhs));
-			}
-			else if (token == "-")
-			{
-				treeStack.push(new Minus(lhs, rhs));
-			}
-			else if (token == "=")
-			{
-				treeStack.push(new Assign(lhs, rhs));
+				ExpressionTree* lhs = treeStack.top();
+				treeStack.pop();
+
+				if (token == "^")
+				{
+					treeStack.push(new Power(lhs, rhs));
+				}
+				else if (token == "*")
+				{
+					treeStack.push(new Multiply(lhs, rhs));
+				}
+				else if (token == "/")
+				{
+					treeStack.push(new Divide(lhs, rhs));
+				}
+				else if (token == "+")
+				{
+					treeStack.push(new Plus(lhs, rhs));
+				}
+				else if (token == "-")
+				{
+					treeStack.push(new BinaryMinus(lhs, rhs));
+				}
+				else if (token == "=")
+				{
+					treeStack.push(new Assign(lhs, rhs, m_varTable));
+				}
 			}
 		}
 		else if (token.find_first_not_of(integer_chars) == std::string::npos)
 		{
-			
+			treeStack.push(new Integer(atoi(token.c_str())));
+		}
+		else if (token.find_first_not_of(real_chars) == std::string::npos)
+		{
+			treeStack.push(new Real(atof(token.c_str())));
+		}
+		else if (token.find_first_not_of(identifier_chars) == std::string::npos)
+		{
+			treeStack.push(new Variable(token, m_varTable));
+		}
+		else
+		{
+			while (!treeStack.empty())
+			{
+				delete treeStack.top();
+				treeStack.pop();
+			}
+
+			throw ExpressionMakerError("Invalid Postfix");
 		}
 	}
+
+	if (treeStack.empty())
+	{
+		throw ExpressionMakerError("Invalid Postfix");
+	}
+
+	if (treeStack.size() > 1)
+	{
+		while (!treeStack.empty())
+		{
+			delete treeStack.top();
+			treeStack.pop();
+		}
+
+		throw ExpressionMakerError("Invalid Postfix");
+	}
+
+	return treeStack.top();
 }
