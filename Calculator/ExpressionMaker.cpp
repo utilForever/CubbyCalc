@@ -12,7 +12,7 @@ namespace
 	const int init_input_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 8 };
 	const int init_stack_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 0 };
 	const int n_ops= sizeof(ops) / sizeof(char*);
-
+	
 	const std::vector<std::string> operators(ops, ops + n_ops);
 
 	const std::string digits("0123456789");
