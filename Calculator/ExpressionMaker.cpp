@@ -8,9 +8,9 @@
 
 namespace
 {
-	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan", "(" };
-	const int init_input_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 8 };
-	const int init_stack_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 0 };
+	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan" };
+	const int init_input_priority[] = { 3, 3, 5, 5, 2, 8, 9, 10, 10, 10 };
+	const int init_stack_priority[] = { 4, 4, 6, 6, 1, 7, 8, 9, 9, 9 };
 	const int n_ops= sizeof(ops) / sizeof(char*);
 
 	const std::vector<std::string> operators(ops, ops + n_ops);
@@ -77,27 +77,6 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 	while (iss >> token)
 	{
 		if (token == "u-")
-		{
-			ExpressionTree* rhs = treeStack.top();
-			treeStack.pop();
-
-			treeStack.push(new UnaryMinus(rhs));
-		}
-		else if (token == "sin")
-		{
-			ExpressionTree* rhs = treeStack.top();
-			treeStack.pop();
-
-			treeStack.push(new Sine(rhs));
-		}
-		else if (token == "cos")
-		{
-			ExpressionTree* rhs = treeStack.top();
-			treeStack.pop();
-
-			treeStack.push(new Cosine(rhs));
-		}
-		else if (token == "tan")
 		{
 			ExpressionTree* rhs = treeStack.top();
 			treeStack.pop();

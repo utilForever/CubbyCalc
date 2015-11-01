@@ -7,9 +7,9 @@
 
 namespace
 {
-	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan", "(" };
-	const int init_input_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 8 };
-	const int init_stack_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 0 };
+	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan" };
+	const int init_input_priority[] = { 3, 3, 5, 5, 2, 8, 9, 10, 10, 10 };
+	const int init_stack_priority[] = { 4, 4, 6, 6, 1, 7, 8, 9, 9, 9 };
 	const int n_ops= sizeof(ops) / sizeof(char*);
 
 	const std::vector<std::string> operators(ops, ops + n_ops);
@@ -89,7 +89,7 @@ std::string InfixToPostfix(const std::string& infix)
 
 	while (is >> token)
 	{
-		if (token != "(" && std::find(operators.begin(), operators.end(), token) != operators.end())
+		if (std::find(operators.begin(), operators.end(), token) != operators.end())
 		{
 			if (previousToken == "(")
 			{
