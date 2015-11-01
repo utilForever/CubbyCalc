@@ -8,9 +8,9 @@
 
 namespace
 {
-	const char* ops[]				= { "+", "-", "*", "/", "=", "^" };
-	const int init_input_priority[]	= {  3,   3,   5,   5,   2,   8  };
-	const int init_stack_priority[]	= {  4,   4,   6,   6,   1,   7  };
+	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan" };
+	const int init_input_priority[] = { 3, 3, 5, 5, 2, 8, 9, 10, 10, 10 };
+	const int init_stack_priority[] = { 4, 4, 6, 6, 1, 7, 8, 9, 9, 9 };
 	const int n_ops= sizeof(ops) / sizeof(char*);
 
 	const std::vector<std::string> operators(ops, ops + n_ops);
@@ -76,49 +76,43 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 
 	while (iss >> token)
 	{
-		if (std::find(operators.begin(), operators.end(), token) != operators.end())
+		if (token == "u-")
 		{
 			ExpressionTree* rhs = treeStack.top();
 			treeStack.pop();
 
-			// Unary
-			if (std::find(operators.begin(), operators.end(), treeStack.top()->ToString()) != operators.end())
-			{
-				if (token == "-")
-				{
-					treeStack.push(new UnaryMinus(rhs));
-				}
-			}
-			// Binary
-			else
-			{
-				ExpressionTree* lhs = treeStack.top();
-				treeStack.pop();
+			treeStack.push(new UnaryMinus(rhs));
+		}
+		else if (std::find(operators.begin(), operators.end(), token) != operators.end())
+		{
+			ExpressionTree* rhs = treeStack.top();
+			treeStack.pop();
+			ExpressionTree* lhs = treeStack.top();
+			treeStack.pop();
 
-				if (token == "^")
-				{
-					treeStack.push(new Power(lhs, rhs));
-				}
-				else if (token == "*")
-				{
-					treeStack.push(new Multiply(lhs, rhs));
-				}
-				else if (token == "/")
-				{
-					treeStack.push(new Divide(lhs, rhs));
-				}
-				else if (token == "+")
-				{
-					treeStack.push(new Plus(lhs, rhs));
-				}
-				else if (token == "-")
-				{
-					treeStack.push(new BinaryMinus(lhs, rhs));
-				}
-				else if (token == "=")
-				{
-					treeStack.push(new Assign(lhs, rhs, m_varTable));
-				}
+			if (token == "^")
+			{
+				treeStack.push(new Power(lhs, rhs));
+			}
+			else if (token == "*")
+			{
+				treeStack.push(new Multiply(lhs, rhs));
+			}
+			else if (token == "/")
+			{
+				treeStack.push(new Divide(lhs, rhs));
+			}
+			else if (token == "+")
+			{
+				treeStack.push(new Plus(lhs, rhs));
+			}
+			else if (token == "-")
+			{
+				treeStack.push(new BinaryMinus(lhs, rhs));
+			}
+			else if (token == "=")
+			{
+				treeStack.push(new Assign(lhs, rhs, m_varTable));
 			}
 		}
 		else if (token.find_first_not_of(integer_chars) == std::string::npos)

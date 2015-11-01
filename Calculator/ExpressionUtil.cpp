@@ -7,16 +7,16 @@
 
 namespace
 {
-	const char* ops[]				= { "+", "-", "*", "/", "=", "^" };
-	const int init_input_priority[]	= {  3,   3,   5,   5,   2,   8  };
-	const int init_stack_priority[]	= {  4,   4,   6,   6,   1,   7  };
+	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan" };
+	const int init_input_priority[] = { 3, 3, 5, 5, 2, 8, 9, 10, 10, 10 };
+	const int init_stack_priority[] = { 4, 4, 6, 6, 1, 7, 8, 9, 9, 9 };
 	const int n_ops= sizeof(ops) / sizeof(char*);
 
 	const std::vector<std::string> operators(ops, ops + n_ops);
 
 	const std::string digits("0123456789");
 	const std::string integer_chars(digits);
-	const std::string real_chars(digits + '.');
+	const std::string real_chars(digits + '.');	
 	const std::string identifier_chars("abcdefghijklmnopqrstuvwxyz");
 	const std::string operand_chars(identifier_chars + digits + '.');
 
@@ -82,6 +82,7 @@ std::string InfixToPostfix(const std::string& infix)
 	std::string token;
 	std::string previousToken = "";
 	int parenCount = 0;
+	bool isUnary = true;
 
 	std::istringstream is(FormatInfix(infix));
 	std::string postfix;
@@ -95,13 +96,21 @@ std::string InfixToPostfix(const std::string& infix)
 				throw InfixError("Operator can't evaluate with invalid operands");
 			}
 
-			while (!operatorStack.empty() && input_priority.find(token)->second <= stack_priority.find(operatorStack.top())->second)
+			if (isUnary && token == "-")
 			{
-				postfix += operatorStack.top() + ' ';
-				operatorStack.pop();
+				token = "u" + token;
+			}
+			else
+			{
+				while (!operatorStack.empty() && input_priority.find(token)->second <= stack_priority.find(operatorStack.top())->second)
+				{
+					postfix += operatorStack.top() + ' ';
+					operatorStack.pop();
+				}
 			}
 
 			operatorStack.push(token);
+			isUnary = true;
 		}
 		else if (token == "(")
 		{
@@ -136,6 +145,7 @@ std::string InfixToPostfix(const std::string& infix)
 			}
 
 			postfix += token + ' ';
+			isUnary = false;
 		}
 		else
 		{
