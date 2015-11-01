@@ -103,6 +103,45 @@ public:
 	double Evaluate() const;
 };
 
+class Sine : public UnaryOperator
+{
+protected:
+	Sine(const Sine&);
+
+public:
+	Sine(ExpressionTree* = 0);
+
+	ExpressionTree* Clone() const;
+	std::string ToString() const;
+	double Evaluate() const;
+};
+
+class Cosine : public UnaryOperator
+{
+protected:
+	Cosine(const Cosine&);
+
+public:
+	Cosine(ExpressionTree* = 0);
+
+	ExpressionTree* Clone() const;
+	std::string ToString() const;
+	double Evaluate() const;
+};
+
+class Tangent : public UnaryOperator
+{
+protected:
+	Tangent(const Tangent&);
+
+public:
+	Tangent(ExpressionTree* = 0);
+
+	ExpressionTree* Clone() const;
+	std::string ToString() const;
+	double Evaluate() const;
+};
+
 class Plus : public BinaryOperator
 {
 protected:
