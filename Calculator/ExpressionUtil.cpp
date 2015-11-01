@@ -33,7 +33,7 @@ namespace
 
 		return temp;
 	}
-
+	
 	const priority_table input_priority = init_priority_table(ops, init_input_priority, n_ops);
 	const priority_table stack_priority = init_priority_table(ops, init_stack_priority, n_ops);
 }
