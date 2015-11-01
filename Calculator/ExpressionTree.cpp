@@ -304,7 +304,7 @@ double Divide::Evaluate() const
 
 	if (tempEval == 0)
 	{
-		throw ExpressionTreeError("Divide by 0");
+		throw ExpressionTreeError("Divided by 0");
 	}
 
 	return m_leftTree->Evaluate() / tempEval;
