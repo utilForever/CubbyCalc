@@ -60,6 +60,22 @@ std::string FormatInfix(const std::string& infix)
 				formatted.append(1, ' ');
 			}
 		}
+		// sin, cos, tan
+		else if (it < eos - 3 && std::find(operators.begin(), operators.end(), std::string(it, it + 3)) != operators.end())
+		{
+			if (it != bos && *(it - 1) != ' ' && *(formatted.end() - 1) != ' ')
+			{
+				formatted.append(1, ' ');
+			}
+
+			formatted.append(it, it + 3);
+			it += 2;
+
+			if ((it + 1) != eos && *(it + 1) != ' ')
+			{
+				formatted.append(1, ' ');
+			}
+		}
 		else 
 		{
 			if (*it != ' ')
