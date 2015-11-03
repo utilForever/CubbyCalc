@@ -1,4 +1,4 @@
-# Calculator
+# Calculator Ver 1.01
 
 Simple Console Calculator using C++
 
@@ -9,6 +9,14 @@ Simple Console Calculator using C++
 ## How to use
 
 TBD
+
+## Version History
+
+- Version 1.00
+
+- Version 1.01
+
+    - Fix to the bug (Recognize "sinx" as not "sin" + "x", but "sinx")
 
 ## License
 
