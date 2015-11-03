@@ -16,7 +16,7 @@ TBD
 
 - Version 1.01
 
-    - Fix to the bug (Recognize "sinx" as not "sin" + "x", but "sinx")
+    - Fix the bug (Recognize "sinx" as not "sin" + "x", but "sinx")
 
 ## License
 
