@@ -8,14 +8,18 @@ Simple Console Calculator using C++
 
 ## How to use
 
-- ?: Help
-- R: Read expression
-- E: Evaluate and print expression
-- P: Print postfix
-- I: Print infix
-- T: Print expression tree
-- V: Print variable table list
-- Q: Quit 
+- ?  : Help
+- R  : Read expression
+- E  : Evaluate and print latest expression
+- E n: Evaluate and print nth expression
+- P  : Print latest expression postfix
+- P n: Print nth expression postfix
+- I  : Print latest expression infix
+- I n: Print nth expression infix
+- T  : Print latest expression tree
+- T n: Print nth expression tree
+- V  : Print variable table list
+- Q  : Quit 
 
 ## Version History
 
@@ -35,6 +39,7 @@ Simple Console Calculator using C++
 - Version 1.02
     
     - Constants refactoring (ExpressionMaker.cpp, ExpressionUtil.cpp → Constants.h)
+    - Create help command
 
 ## License
 
