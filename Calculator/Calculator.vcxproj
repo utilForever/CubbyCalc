@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="ExpressionMaker.h" />
     <ClInclude Include="ExpressionTree.h" />
@@ -169,4 +170,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>
