@@ -18,7 +18,7 @@ Calculator::~Calculator()
 
 void Calculator::Run()
 {
-	std::cout << "Calculator!" << std::endl;
+	std::cout << "Calculator Version 1.02" << std::endl;
 	PrintHelp();
 
 	for (;;)
@@ -46,7 +46,19 @@ void Calculator::Run()
 
 void Calculator::PrintHelp()
 {
-
+	std::cout
+		<< "?  : Help" << std::endl
+		<< "R  : Read expression" << std::endl
+		<< "E  : Evaluate and print latest expression" << std::endl
+		<< "E n: Evaluate and print nth expression" << std::endl
+		<< "P  : Print latest expression postfix" << std::endl
+		<< "P n: Print nth expression postfix" << std::endl
+		<< "I  : Print latest expression infix" << std::endl
+		<< "I n: Print nth expression infix" << std::endl
+		<< "T  : Print latest expression tree" << std::endl
+		<< "T n: Print nth expression tree" << std::endl
+		<< "V  : Print variable table list" << std::endl
+		<< "Q  : Quit" << std::endl;
 }
 
 void Calculator::GetCommand()
