@@ -1,4 +1,4 @@
-# Calculator Ver 1.01
+# Calculator Ver 1.02
 
 Simple Console Calculator using C++
 
@@ -17,6 +17,10 @@ TBD
 - Version 1.01
 
     - Fix the bug (Recognize "sinx" as not "sin" + "x", but "sinx")
+    
+- Version 1.02
+    
+    - Constants refactoring (ExpressionMaker.cpp, ExpressionUtil.cpp → Constants.h)
 
 ## License
 
