@@ -8,7 +8,14 @@ Simple Console Calculator using C++
 
 ## How to use
 
-TBD
+- ?: Help
+- R: Read expression
+- E: Evaluate and print expression
+- P: Print postfix
+- I: Print infix
+- T: Print expression tree
+- V: Print variable table list
+- Q: Quit 
 
 ## Version History
 
