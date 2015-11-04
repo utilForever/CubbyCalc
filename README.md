@@ -8,18 +8,18 @@ Simple Console Calculator using C++
 
 ## How to use
 
-- ?  : Help
-- R  : Read expression
-- E  : Evaluate and print latest expression
+- ?: Help
+- R: Read expression
+- E: Evaluate and print latest expression
 - E n: Evaluate and print nth expression
-- P  : Print latest expression postfix
+- P: Print latest expression postfix
 - P n: Print nth expression postfix
-- I  : Print latest expression infix
+- I: Print latest expression infix
 - I n: Print nth expression infix
-- T  : Print latest expression tree
+- T: Print latest expression tree
 - T n: Print nth expression tree
-- V  : Print variable table list
-- Q  : Quit 
+- V: Print variable table list
+- Q: Quit 
 
 ## Version History
 
