@@ -14,6 +14,13 @@ TBD
 
 - Version 1.00
 
+    - Implement binary operator (+, -, *, /, ^)
+    - Implement unary operator (-)
+    - Implement trigonometrical function (sin, cos, tan)
+    - Implement expression tree (inheritance, polymorphism)
+    - Implement infix to postfix converter
+    - Implement variable table
+
 - Version 1.01
 
     - Fix the bug (Recognize "sinx" as not "sin" + "x", but "sinx")
