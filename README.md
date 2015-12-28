@@ -74,6 +74,20 @@ t=1.25
     
     - Constants refactoring (ExpressionMaker.cpp, ExpressionUtil.cpp → Constants.h)
     - Create help command
+    
+- Version 1.03
+
+    - Enable to input multiple expressions (Separator: ",")
+        
+        - Example     
+        ```
+        >> R
+        a=1, b=2, c=3
+        >> R
+        a+b+c
+        >> E
+        6
+        ```
 
 ## License
 
