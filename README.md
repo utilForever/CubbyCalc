@@ -21,6 +21,40 @@ Simple Console Calculator using C++
 - V: Print variable table list
 - Q: Quit 
 
+```
+Calculator Version 1.02
+?  : Help
+R  : Read expression
+E  : Evaluate and print latest expression
+E n: Evaluate and print nth expression
+P  : Print latest expression postfix
+P n: Print nth expression postfix
+I  : Print latest expression infix
+I n: Print nth expression infix
+T  : Print latest expression tree
+T n: Print nth expression tree
+V  : Print variable table list
+Q  : Quit
+>> R
+a + b*s + c*sin(2*3.14*(d + t/e))
+>> R
+a=1
+>> R
+b=2
+>> R
+c=3
+>> R
+d=4
+>> R
+e=5
+>> R
+s=5
+>> R
+t=1.25
+>> E 1
+13.9997
+```
+
 ## Version History
 
 - Version 1.00
