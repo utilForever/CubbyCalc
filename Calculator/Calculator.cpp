@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <regex>
 
 #include "Calculator.h"
 #include "ExpressionMaker.h"
@@ -153,14 +154,19 @@ void Calculator::ReadExpression(std::istream& is)
 
 	if (getline(is, infix))
 	{
-		m_expMaker.SetPostfix(InfixToPostfix(infix));
-		Expression exp = m_expMaker.GetExpression();
-		m_oldExpressions.push_back(Expression(exp));
-		m_currentExpression = exp;
+		std::vector<std::string> expressions = SplitExpression(infix, ",");
 
-		if (m_currentExpression.TopNodeIsAssign())
+		for (auto& expression : expressions)
 		{
-			m_currentExpression.Evaluate();
+			m_expMaker.SetPostfix(InfixToPostfix(expression));
+			Expression exp = m_expMaker.GetExpression();
+			m_oldExpressions.push_back(Expression(exp));
+			m_currentExpression = exp;
+
+			if (m_currentExpression.TopNodeIsAssign())
+			{
+				m_currentExpression.Evaluate();
+			}
 		}
 	}
 	else
@@ -239,3 +245,13 @@ void Calculator::SetCurrentExpression()
 		m_currentExpression = exp;
 	}
 }
+
+std::vector<std::string> Calculator::SplitExpression(const std::string& input, const std::string& regex)
+{
+	// passing -1 as the submatch index parameter performs splitting
+	std::regex re(regex);
+	std::sregex_token_iterator first{ input.begin(), input.end(), re, -1 }, last;
+
+	return { first, last };
+}
+

@@ -39,6 +39,7 @@ private:
 	void SetCurrentExpression();
 	void ReadExpression(std::istream&);
 
+	std::vector<std::string> SplitExpression(const std::string&, const std::string&);
 public:
 	Calculator();
 	~Calculator();
