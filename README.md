@@ -77,8 +77,7 @@ t=1.25
     
 - Version 1.03
 
-    - Enable to input multiple expressions (Separator: ",")
-        
+    - Enable to input multiple expressions (Separator: ",")     
         - Example     
         ```
         >> R
@@ -87,8 +86,7 @@ t=1.25
         a+b+c
         >> E
         6
-        ```
-        
+        ```      
     - Remove friend class declaration (Calculator.h)
     - 1st ExpressionTree refactoring (UnaryOperator.h/cpp, BinaryOperator.h/cpp, Operand.h/cpp)    
 
