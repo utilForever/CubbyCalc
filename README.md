@@ -88,6 +88,9 @@ t=1.25
         >> E
         6
         ```
+        
+    - Remove friend class declaration (Calculator.h)
+    - 1st ExpressionTree refactoring (UnaryOperator.h/cpp, BinaryOperator.h/cpp, Operand.h/cpp)    
 
 ## License
 
