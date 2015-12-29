@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 #include "Expression.h"
-#include "ExpressionTree.h"
+#include "BinaryOperator.h"
 
 Expression::Expression(ExpressionTree* expTree)
 	: m_topNode(expTree)

@@ -6,6 +6,9 @@
 
 #include "Constants.h"
 #include "ExpressionMaker.h"
+#include "UnaryOperator.h"
+#include "BinaryOperator.h"
+#include "Operand.h"
 
 ExpressionMaker::ExpressionMaker(VariableTable& varTable)
 	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression(), m_varTable(varTable)
