@@ -19,7 +19,7 @@ Calculator::~Calculator()
 
 void Calculator::Run()
 {
-	std::cout << "Calculator Version 1.02" << std::endl;
+	std::cout << "Calculator Version 1.03" << std::endl;
 	PrintHelp();
 
 	for (;;)
@@ -254,4 +254,3 @@ std::vector<std::string> Calculator::SplitExpression(const std::string& input, c
 
 	return { first, last };
 }
-
