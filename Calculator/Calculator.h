@@ -9,9 +9,6 @@
 
 class Calculator
 {
-	friend class Assign;
-	friend class Variable;
-
 private:
 	Calculator(const Calculator&);
 	Calculator& operator=(const Calculator&);
