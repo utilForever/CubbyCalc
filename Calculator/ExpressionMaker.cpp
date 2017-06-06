@@ -73,7 +73,7 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 			ExpressionTree* rhs = treeStack.top();
 			treeStack.pop();
 
-			treeStack.push(new UnaryMinus(rhs));
+			treeStack.push(new Tangent(rhs));
 		}
 		else if (std::find(operators.begin(), operators.end(), token) != operators.end())
 		{
