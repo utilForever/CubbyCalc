@@ -28,7 +28,7 @@ std::string FormatInfix(const std::string& infix)
 			}
 		}
 		// sin, cos, tan
-		else if (it < eos - 3 && std::find(operators.begin(), operators.end(), std::string(it, it + 3)) != operators.end())
+		else if (infix.size() > 3 && it < eos - 3 && std::find(operators.begin(), operators.end(), std::string(it, it + 3)) != operators.end())
 		{
 			if (it != bos && *(it - 1) != ' ' && *(formatted.end() - 1) != ' ')
 			{
