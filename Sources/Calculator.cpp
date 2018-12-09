@@ -1,11 +1,11 @@
+#include <Calculator.hpp>
+#include <ExpressionMaker.hpp>
+#include <ExpressionUtil.hpp>
+
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <regex>
-
-#include "Calculator.h"
-#include "ExpressionMaker.h"
-#include "ExpressionUtil.h"
 
 const std::string Calculator::m_validCommand("?REPITVQ");
 const std::string Calculator::m_numberedCommand("EPIT");

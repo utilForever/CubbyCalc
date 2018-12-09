@@ -1,11 +1,11 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <vector>
+#include <Expression.hpp>
+#include <ExpressionMaker.hpp>
+#include <VariableTable.hpp>
 
-#include "Expression.h"
-#include "ExpressionMaker.h"
-#include "VariableTable.h"
+#include <vector>
 
 class Calculator
 {

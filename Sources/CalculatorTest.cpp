@@ -1,4 +1,5 @@
-#include "Calculator.h"
+#include <Calculator.hpp>
+
 #include <iostream>
 
 int main()

@@ -1,7 +1,7 @@
+#include <Operand.hpp>
+
 #include <iomanip>
 #include <sstream>
-
-#include "Operand.h"
 
 Operand::Operand()
 { }

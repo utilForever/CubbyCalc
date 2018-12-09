@@ -1,9 +1,9 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
-#include <stdexcept>
+#include <ExpressionTree.hpp>
 
-#include "ExpressionTree.h"
+#include <stdexcept>
 
 class ExpressionError : public std::logic_error
 {

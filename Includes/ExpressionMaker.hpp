@@ -1,12 +1,12 @@
 #ifndef EXPRESSION_MAKER_H
 #define EXPRESSION_MAKER_H
 
-#include <string>
-#include <stdexcept>
+#include <VariableTable.hpp>
+#include <Expression.hpp>
+#include <ExpressionTree.hpp>
 
-#include "VariableTable.h"
-#include "Expression.h"
-#include "ExpressionTree.h"
+#include <stdexcept>
+#include <string>
 
 class ExpressionMakerError : public std::logic_error
 {

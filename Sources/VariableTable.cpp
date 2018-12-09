@@ -1,8 +1,8 @@
+#include <VariableTable.hpp>
+
 #include <string>
 #include <map>
 #include <iostream>
-
-#include "VariableTable.h"
 
 typedef std::map<std::string, double> variable_table;
 

@@ -1,7 +1,8 @@
-#include <iomanip>
+#include <BinaryOperator.hpp>
+#include <ExpressionTree.hpp>
+#include <Operand.hpp>
 
-#include "BinaryOperator.h"
-#include "Operand.h"
+#include <iomanip>
 
 BinaryOperator::BinaryOperator(ExpressionTree* left, ExpressionTree* right)
 	: m_leftTree(left), m_rightTree(right)
