@@ -1,8 +1,7 @@
-#include <string>
-#include <stdexcept>
+#include <BinaryOperator.hpp>
+#include <Expression.hpp>
 
-#include "Expression.h"
-#include "BinaryOperator.h"
+#include <string>
 
 Expression::Expression(ExpressionTree* expTree)
 	: m_topNode(expTree)

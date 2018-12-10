@@ -1,6 +1,6 @@
-#include <iomanip>
+#include <UnaryOperator.hpp>
 
-#include "UnaryOperator.h"
+#include <iomanip>
 
 UnaryOperator::UnaryOperator(ExpressionTree* child)
 	: m_tree(child)

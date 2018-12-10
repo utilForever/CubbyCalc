@@ -1,14 +1,14 @@
+#include <BinaryOperator.hpp>
+#include <Constants.hpp>
+#include <ExpressionMaker.hpp>
+#include <Operand.hpp>
+#include <UnaryOperator.hpp>
+
 #include <sstream>
 #include <vector>
 #include <string>
 #include <stack>
 #include <map>
-
-#include "Constants.h"
-#include "ExpressionMaker.h"
-#include "UnaryOperator.h"
-#include "BinaryOperator.h"
-#include "Operand.h"
 
 ExpressionMaker::ExpressionMaker(VariableTable& varTable)
 	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression(), m_varTable(varTable)

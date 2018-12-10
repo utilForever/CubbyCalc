@@ -1,10 +1,10 @@
 #ifndef OPERAND_H
 #define OPERAND_H
 
-#include <string>
+#include <VariableTable.hpp>
+#include <ExpressionTree.hpp>
 
-#include "VariableTable.h"
-#include "ExpressionTree.h"
+#include <string>
 
 class Operand : public ExpressionTree
 {

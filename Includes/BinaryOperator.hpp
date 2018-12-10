@@ -1,8 +1,8 @@
 #ifndef BINARY_OPERATOR_H
 #define BINARY_OPERATOR_H
 
-#include "ExpressionTree.h"
-#include "VariableTable.h"
+#include <ExpressionTree.hpp>
+#include <VariableTable.hpp>
 
 class BinaryOperator : public ExpressionTree
 {

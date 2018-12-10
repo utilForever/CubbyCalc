@@ -1,11 +1,11 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <vector>
+#include <Expression.hpp>
+#include <ExpressionMaker.hpp>
+#include <VariableTable.hpp>
 
-#include "Expression.h"
-#include "ExpressionMaker.h"
-#include "VariableTable.h"
+#include <vector>
 
 class Calculator
 {
@@ -20,7 +20,7 @@ private:
 	static const std::string m_numberedCommand;
 	Expression m_currentExpression;
 	char m_command;
-	unsigned int m_expressionNumber;
+	size_t m_expressionNumber;
 	int m_expressionNR;
 	std::vector<Expression> m_oldExpressions;
 

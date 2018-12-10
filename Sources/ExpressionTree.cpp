@@ -1,7 +1,4 @@
-#include <sstream>
-#include <iomanip>
-
-#include "ExpressionTree.h"
+#include <ExpressionTree.hpp>
 
 ExpressionTree::ExpressionTree()
 { }

@@ -1,11 +1,11 @@
+#include <Calculator.hpp>
+#include <ExpressionMaker.hpp>
+#include <ExpressionUtil.hpp>
+
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <regex>
-
-#include "Calculator.h"
-#include "ExpressionMaker.h"
-#include "ExpressionUtil.h"
 
 const std::string Calculator::m_validCommand("?REPITVQ");
 const std::string Calculator::m_numberedCommand("EPIT");
@@ -71,11 +71,11 @@ void Calculator::GetCommand()
 
 	iss >> std::ws;
 	iss >> m_command;
-	m_command = toupper(m_command);
+	m_command = static_cast<char>(toupper(static_cast<int>(m_command)));
 
 	if (m_numberedCommand.find(m_command) != std::string::npos)
 	{
-		unsigned int readNumber = m_oldExpressions.size();
+		size_t readNumber = m_oldExpressions.size();
 		iss >> std::ws;
 		if (isdigit(iss.peek()))
 		{

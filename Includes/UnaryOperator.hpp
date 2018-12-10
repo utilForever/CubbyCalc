@@ -1,9 +1,9 @@
 #ifndef UNARY_OPERATOR_H
 #define UNARY_OPERATOR_H
 
-#include <string>
+#include <ExpressionTree.hpp>
 
-#include "ExpressionTree.h"
+#include <string>
 
 class UnaryOperator : public ExpressionTree
 {
