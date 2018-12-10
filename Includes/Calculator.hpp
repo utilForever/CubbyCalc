@@ -20,7 +20,7 @@ private:
 	static const std::string m_numberedCommand;
 	Expression m_currentExpression;
 	char m_command;
-	unsigned int m_expressionNumber;
+	size_t m_expressionNumber;
 	int m_expressionNR;
 	std::vector<Expression> m_oldExpressions;
 

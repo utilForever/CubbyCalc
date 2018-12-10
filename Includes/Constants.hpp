@@ -19,13 +19,13 @@ namespace
 
 	typedef std::map<std::string, int> priority_table;
 
-	priority_table init_priority_table(const char* ops[], const int* priority, const int n_ops)
+	priority_table init_priority_table(const char* op_list[], const int* priority, const int n_op_list)
 	{
 		priority_table temp;
 
-		for (int i = 0; i < n_ops; ++i)
+		for (int i = 0; i < n_op_list; ++i)
 		{
-			temp.insert(std::make_pair(std::string(ops[i]), priority[i]));
+			temp.insert(std::make_pair(std::string(op_list[i]), priority[i]));
 		}
 
 		return temp;
