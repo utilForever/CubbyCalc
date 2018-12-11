@@ -2,6 +2,7 @@
 #include <ExpressionTree.hpp>
 #include <Operand.hpp>
 
+#include <cmath>
 #include <iomanip>
 
 BinaryOperator::BinaryOperator(ExpressionTree* left, ExpressionTree* right)
@@ -167,7 +168,7 @@ std::string Power::ToString() const
 
 double Power::Evaluate() const
 {
-	return pow(m_leftTree->Evaluate(), m_rightTree->Evaluate());
+	return std::pow(m_leftTree->Evaluate(), m_rightTree->Evaluate());
 }
 
 Assign::Assign(ExpressionTree* left, ExpressionTree* right, VariableTable& varTable)

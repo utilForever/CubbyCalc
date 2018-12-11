@@ -1,5 +1,6 @@
 #include <UnaryOperator.hpp>
 
+#include <cmath>
 #include <iomanip>
 
 UnaryOperator::UnaryOperator(ExpressionTree* child)

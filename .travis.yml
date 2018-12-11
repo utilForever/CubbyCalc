@@ -1,0 +1,26 @@
+language: cpp
+
+matrix:
+  include:
+    # Test Docker based on Ubuntu 18.04 LTS + gcc
+    - os: linux
+      dist: trusty
+      sudo: required
+      services: docker
+      script:
+        - sh Scripts/travis_build_docker.sh Scripts/Dockerfile.bionic bionic
+    # Test OS X 10.12 + Xcode 9 + clang
+    - os: osx
+      osx_image: xcode9
+      compiler: clang
+      script:
+        - sh Scripts/travis_build.sh
+
+before_install:
+  - eval "${MATRIX_EVAL}"
+  - if [ $TRAVIS_OS_NAME == linux ]; then 
+       sudo apt-get update -qq;
+    fi
+  - if [ $TRAVIS_OS_NAME == osx ]; then 
+       brew update;
+    fi
