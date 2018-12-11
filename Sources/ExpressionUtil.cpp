@@ -1,9 +1,10 @@
 #include <Constants.hpp>
 #include <ExpressionUtil.hpp>
 
+#include <algorithm>
+#include <sstream>
 #include <stack>
 #include <vector>
-#include <sstream>
 
 std::string FormatInfix(const std::string& infix)
 {

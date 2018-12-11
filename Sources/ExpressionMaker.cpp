@@ -4,11 +4,12 @@
 #include <Operand.hpp>
 #include <UnaryOperator.hpp>
 
-#include <sstream>
-#include <vector>
-#include <string>
-#include <stack>
+#include <algorithm>
 #include <map>
+#include <sstream>
+#include <stack>
+#include <string>
+#include <vector>
 
 ExpressionMaker::ExpressionMaker(VariableTable& varTable)
 	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression(), m_varTable(varTable)
