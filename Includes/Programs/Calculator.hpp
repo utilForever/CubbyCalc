@@ -1,9 +1,9 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <Expression.hpp>
-#include <ExpressionMaker.hpp>
-#include <VariableTable.hpp>
+#include <Expressions/Expression.hpp>
+#include <Expressions/ExpressionMaker.hpp>
+#include <Variables/VariableTable.hpp>
 
 #include <vector>
 

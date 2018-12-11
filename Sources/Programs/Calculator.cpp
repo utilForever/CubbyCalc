@@ -1,6 +1,6 @@
-#include <Calculator.hpp>
-#include <ExpressionMaker.hpp>
-#include <ExpressionUtil.hpp>
+#include <Expressions/ExpressionMaker.hpp>
+#include <Expressions/ExpressionUtil.hpp>
+#include <Programs/Calculator.hpp>
 
 #include <iostream>
 #include <sstream>

@@ -1,9 +1,9 @@
 #ifndef EXPRESSION_MAKER_H
 #define EXPRESSION_MAKER_H
 
-#include <VariableTable.hpp>
-#include <Expression.hpp>
-#include <ExpressionTree.hpp>
+#include <Expressions/Expression.hpp>
+#include <Expressions/ExpressionTree.hpp>
+#include <Variables/VariableTable.hpp>
 
 #include <stdexcept>
 #include <string>

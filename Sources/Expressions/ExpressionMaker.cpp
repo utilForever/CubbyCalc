@@ -1,11 +1,10 @@
-#include <BinaryOperator.hpp>
-#include <Constants.hpp>
-#include <ExpressionMaker.hpp>
-#include <Operand.hpp>
-#include <UnaryOperator.hpp>
+#include <Commons/Constants.hpp>
+#include <Expressions/ExpressionMaker.hpp>
+#include <Operators/BinaryOperator.hpp>
+#include <Operators/Operand.hpp>
+#include <Operators/UnaryOperator.hpp>
 
 #include <algorithm>
-#include <map>
 #include <sstream>
 #include <stack>
 #include <string>

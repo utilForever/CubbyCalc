@@ -1,4 +1,4 @@
-#include <VariableTable.hpp>
+#include <Variables/VariableTable.hpp>
 
 #include <string>
 #include <map>

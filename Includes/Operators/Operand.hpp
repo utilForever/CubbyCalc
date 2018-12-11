@@ -1,8 +1,8 @@
 #ifndef OPERAND_H
 #define OPERAND_H
 
-#include <VariableTable.hpp>
-#include <ExpressionTree.hpp>
+#include <Expressions/ExpressionTree.hpp>
+#include <Variables/VariableTable.hpp>
 
 #include <string>
 

@@ -1,5 +1,5 @@
-#include <BinaryOperator.hpp>
-#include <Expression.hpp>
+#include <Expressions/Expression.hpp>
+#include <Operators/BinaryOperator.hpp>
 
 #include <string>
 
