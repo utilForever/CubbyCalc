@@ -1,4 +1,4 @@
-#include <Operators/Operand.hpp>
+#include <Operands/Operand.hpp>
 
 #include <iomanip>
 #include <sstream>

@@ -1,6 +1,6 @@
 #include <Expressions/ExpressionTree.hpp>
+#include <Operands/Operand.hpp>
 #include <Operators/BinaryOperator.hpp>
-#include <Operators/Operand.hpp>
 
 #include <cmath>
 #include <iomanip>

@@ -1,7 +1,7 @@
 #include <Commons/Constants.hpp>
 #include <Expressions/ExpressionMaker.hpp>
+#include <Operands/Operand.hpp>
 #include <Operators/BinaryOperator.hpp>
-#include <Operators/Operand.hpp>
 #include <Operators/UnaryOperator.hpp>
 
 #include <algorithm>
