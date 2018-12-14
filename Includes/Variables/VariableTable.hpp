@@ -1,5 +1,5 @@
-#ifndef VARIABLE_TABLE_H
-#define VARIABLE_TABLE_H
+#ifndef CUBBYCALC_VARIABLE_TABLE_H
+#define CUBBYCALC_VARIABLE_TABLE_H
 
 #include <map>
 #include <string>

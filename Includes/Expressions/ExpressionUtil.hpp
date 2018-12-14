@@ -1,5 +1,5 @@
-#ifndef EXPRESSION_UTIL_H
-#define EXPRESSION_UTIL_H
+#ifndef CUBBYCALC_EXPRESSION_UTIL_H
+#define CUBBYCALC_EXPRESSION_UTIL_H
 
 #include <string>
 #include <stdexcept>

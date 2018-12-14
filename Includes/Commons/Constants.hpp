@@ -1,3 +1,6 @@
+#ifndef CUBBYCALC_CONSTANTS_H
+#define CUBBYCALC_CONSTANTS_H
+
 #include <map>
 #include <vector>
 #include <string>
@@ -34,3 +37,5 @@ namespace
 	const priority_table input_priority = init_priority_table(ops, init_input_priority, n_ops);
 	const priority_table stack_priority = init_priority_table(ops, init_stack_priority, n_ops);
 }
+
+#endif

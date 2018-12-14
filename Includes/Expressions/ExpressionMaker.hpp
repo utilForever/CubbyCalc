@@ -1,5 +1,5 @@
-#ifndef EXPRESSION_MAKER_H
-#define EXPRESSION_MAKER_H
+#ifndef CUBBYCALC_EXPRESSION_MAKER_H
+#define CUBBYCALC_EXPRESSION_MAKER_H
 
 #include <Expressions/Expression.hpp>
 #include <Expressions/ExpressionTree.hpp>

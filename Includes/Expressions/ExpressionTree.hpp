@@ -1,5 +1,5 @@
-#ifndef EXPRESSION_TREE_H
-#define EXPRESSION_TREE_H
+#ifndef CUBBYCALC_EXPRESSION_TREE_H
+#define CUBBYCALC_EXPRESSION_TREE_H
 
 #include <stdexcept>
 
