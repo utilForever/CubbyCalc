@@ -1,5 +1,5 @@
-#ifndef CUBBYCALC_BINARY_OPERATOR_H
-#define CUBBYCALC_BINARY_OPERATOR_H
+#ifndef CUBBYCALC_BINARY_OPERATOR_HPP
+#define CUBBYCALC_BINARY_OPERATOR_HPP
 
 #include <Expressions/ExpressionTree.hpp>
 #include <Variables/VariableTable.hpp>

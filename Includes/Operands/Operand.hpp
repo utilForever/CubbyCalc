@@ -1,5 +1,5 @@
-#ifndef CUBBYCALC_OPERAND_H
-#define CUBBYCALC_OPERAND_H
+#ifndef CUBBYCALC_OPERAND_HPP
+#define CUBBYCALC_OPERAND_HPP
 
 #include <Expressions/ExpressionTree.hpp>
 #include <Variables/VariableTable.hpp>

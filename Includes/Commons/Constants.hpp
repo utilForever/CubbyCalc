@@ -1,5 +1,5 @@
-#ifndef CUBBYCALC_CONSTANTS_H
-#define CUBBYCALC_CONSTANTS_H
+#ifndef CUBBYCALC_CONSTANTS_HPP
+#define CUBBYCALC_CONSTANTS_HPP
 
 #include <map>
 #include <vector>

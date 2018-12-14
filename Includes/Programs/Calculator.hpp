@@ -1,5 +1,5 @@
-#ifndef CUBBYCALC_CALCULATOR_H
-#define CUBBYCALC_CALCULATOR_H
+#ifndef CUBBYCALC_CALCULATOR_HPP
+#define CUBBYCALC_CALCULATOR_HPP
 
 #include <Expressions/Expression.hpp>
 #include <Expressions/ExpressionMaker.hpp>

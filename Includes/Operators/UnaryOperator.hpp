@@ -1,5 +1,5 @@
-#ifndef CUBBYCALC_UNARY_OPERATOR_H
-#define CUBBYCALC_UNARY_OPERATOR_H
+#ifndef CUBBYCALC_UNARY_OPERATOR_HPP
+#define CUBBYCALC_UNARY_OPERATOR_HPP
 
 #include <Expressions/ExpressionTree.hpp>
 
