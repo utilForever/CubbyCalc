@@ -1,5 +1,5 @@
 #include <Expressions/ExpressionTree.hpp>
-#include <Operands/Operand.hpp>
+#include <Operands/Variable.hpp>
 #include <Operators/BinaryOperator.hpp>
 
 #include <cmath>

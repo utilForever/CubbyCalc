@@ -1,6 +1,8 @@
 #include <Commons/Constants.hpp>
 #include <Expressions/ExpressionMaker.hpp>
-#include <Operands/Operand.hpp>
+#include <Operands/Integer.hpp>
+#include <Operands/Real.hpp>
+#include <Operands/Variable.hpp>
 #include <Operators/BinaryOperator.hpp>
 #include <Operators/UnaryOperator.hpp>
 
