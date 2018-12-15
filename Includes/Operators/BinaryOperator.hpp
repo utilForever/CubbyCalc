@@ -26,32 +26,6 @@ public:
 	virtual std::string GetInfix(bool = false) const;
 };
 
-class Plus : public BinaryOperator
-{
-protected:
-	Plus(const Plus&);
-
-public:
-	Plus(ExpressionTree*, ExpressionTree*);
-
-	ExpressionTree* Clone() const;
-	std::string ToString() const;
-	double Evaluate() const;
-};
-
-class BinaryMinus : public BinaryOperator
-{
-protected:
-	BinaryMinus(const BinaryMinus&);
-
-public:
-	BinaryMinus(ExpressionTree* = 0, ExpressionTree* = 0);
-
-	ExpressionTree* Clone() const;
-	std::string ToString() const;
-	double Evaluate() const;
-};
-
 class Multiply : public BinaryOperator
 {
 protected:

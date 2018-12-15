@@ -49,52 +49,6 @@ void BinaryOperator::Print(std::ostream& os, int depth) const
 	m_leftTree->Print(os, depth + 3);
 }
 
-Plus::Plus(ExpressionTree* left, ExpressionTree* right)
-	: BinaryOperator(left, right)
-{ }
-
-Plus::Plus(const Plus& plusNode)
-	: BinaryOperator(plusNode)
-{ }
-
-ExpressionTree* Plus::Clone() const
-{
-	return new Plus(*this);
-}
-
-std::string Plus::ToString() const
-{
-	return "+";
-}
-
-double Plus::Evaluate() const
-{
-	return m_leftTree->Evaluate() + m_rightTree->Evaluate();
-}
-
-BinaryMinus::BinaryMinus(ExpressionTree* left, ExpressionTree* right)
-	: BinaryOperator(left, right)
-{ }
-
-BinaryMinus::BinaryMinus(const BinaryMinus& minusNode)
-	: BinaryOperator(minusNode)
-{ }
-
-ExpressionTree* BinaryMinus::Clone() const
-{
-	return new BinaryMinus(*this);
-}
-
-std::string BinaryMinus::ToString() const
-{
-	return "-";
-}
-
-double BinaryMinus::Evaluate() const
-{
-	return m_leftTree->Evaluate() - m_rightTree->Evaluate();
-}
-
 Multiply::Multiply(ExpressionTree* left, ExpressionTree* right)
 	: BinaryOperator(left, right)
 { }

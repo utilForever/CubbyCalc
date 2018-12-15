@@ -4,7 +4,11 @@
 #include <Operands/Real.hpp>
 #include <Operands/Variable.hpp>
 #include <Operators/BinaryOperator.hpp>
-#include <Operators/UnaryOperator.hpp>
+#include <Operators/Cosine.hpp>
+#include <Operators/Minus.hpp>
+#include <Operators/Plus.hpp>
+#include <Operators/Sine.hpp>
+#include <Operators/Tangent.hpp>
 
 #include <algorithm>
 #include <sstream>
