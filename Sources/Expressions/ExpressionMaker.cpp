@@ -4,9 +4,13 @@
 #include <Operands/Real.hpp>
 #include <Operands/Variable.hpp>
 #include <Operators/BinaryOperator.hpp>
+#include <Operators/Assign.hpp>
 #include <Operators/Cosine.hpp>
+#include <Operators/Divide.hpp>
 #include <Operators/Minus.hpp>
+#include <Operators/Multiply.hpp>
 #include <Operators/Plus.hpp>
+#include <Operators/Power.hpp>
 #include <Operators/Sine.hpp>
 #include <Operators/Tangent.hpp>
 

@@ -1,4 +1,5 @@
 #include <Expressions/Expression.hpp>
+#include <Operators/Assign.hpp>
 #include <Operators/BinaryOperator.hpp>
 
 #include <string>
