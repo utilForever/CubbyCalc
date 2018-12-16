@@ -2,6 +2,8 @@
 
 Simple Console Calculator using C++
 
+[![License](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://github.com/utilForever/CubbyCalc/blob/master/LICENSE) [![Build Status](https://travis-ci.org/utilForever/CubbyCalc.svg?branch=master)](https://travis-ci.org/utilForever/CubbyCalc/branches) [![Build status](https://ci.appveyor.com/api/projects/status/github/utilForever/CubbyCalc?branch=master&svg=true)](https://ci.appveyor.com/project/utilForever/CubbyCalc/branch/master) [![Build Status](https://dev.azure.com/utilforever/CubbyCalc/_apis/build/status/utilForever.CubbyCalc)](https://dev.azure.com/utilforever/CubbyCalc/_build/latest?definitionId=2)
+
 ## CodeMap
 
 ![CodeMap](https://github.com/utilForever/Calculator/blob/master/CodeMap.png)
