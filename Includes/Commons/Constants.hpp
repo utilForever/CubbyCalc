@@ -2,40 +2,44 @@
 #define CUBBYCALC_CONSTANTS_HPP
 
 #include <map>
-#include <vector>
 #include <string>
+#include <vector>
 
-namespace
+namespace CubbyCalc
 {
-	const char* ops[] = { "+", "-", "*", "/", "=", "^", "u-", "sin", "cos", "tan", "(" };
-	const int init_input_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 8 };
-	const int init_stack_priority[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 0 };
-	const int n_ops = sizeof(ops) / sizeof(char*);
+constexpr const char* OPERATORS[] = { "+",  "-",   "*",   "/",   "=", "^",
+                                      "u-", "sin", "cos", "tan", "(" };
+constexpr size_t OPERATORS_SIZE = sizeof(OPERATORS) / sizeof(const char*);
 
-	const std::vector<std::string> operators(ops, ops + n_ops);
+constexpr int INIT_INPUT_PRIORITY[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 8 };
+constexpr int INIT_STACK_PRIORITY[] = { 4, 4, 5, 5, 1, 6, 7, 7, 7, 7, 0 };
 
-	const std::string digits("0123456789");
-	const std::string integer_chars(digits);
-	const std::string real_chars(digits + '.');
-	const std::string identifier_chars("abcdefghijklmnopqrstuvwxyz");
-	const std::string operand_chars(identifier_chars + digits + '.');
+const std::string DIGITS("0123456789");
+const std::string INTEGER_CHARS(DIGITS);
+const std::string REAL_CHARS(DIGITS + '.');
 
-	typedef std::map<std::string, int> priority_table;
+const std::string ID_CHARS("abcdefghijklmnopqrstuvwxyz");
+const std::string OPERAND_CHARS(ID_CHARS + DIGITS + '.');
 
-	priority_table init_priority_table(const char* op_list[], const int* priority, const int n_op_list)
-	{
-		priority_table temp;
+using PriorityTable = std::map<std::string, int>;
 
-		for (int i = 0; i < n_op_list; ++i)
-		{
-			temp.insert(std::make_pair(std::string(op_list[i]), priority[i]));
-		}
+inline PriorityTable InitPriorityTable(const char* const opList[],
+                                       const size_t opSize, const int* priority)
+{
+    PriorityTable temp;
 
-		return temp;
-	}
+    for (size_t i = 0; i < opSize; ++i)
+    {
+        temp.insert(std::make_pair(std::string(opList[i]), priority[i]));
+    }
 
-	const priority_table input_priority = init_priority_table(ops, init_input_priority, n_ops);
-	const priority_table stack_priority = init_priority_table(ops, init_stack_priority, n_ops);
+    return temp;
 }
+
+const PriorityTable INPUT_PRIORITY =
+    InitPriorityTable(OPERATORS, OPERATORS_SIZE, INIT_INPUT_PRIORITY);
+const PriorityTable STACK_PRIORITY =
+    InitPriorityTable(OPERATORS, OPERATORS_SIZE, INIT_STACK_PRIORITY);
+}  // namespace CubbyCalc
 
 #endif
