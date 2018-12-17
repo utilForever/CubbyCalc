@@ -6,6 +6,8 @@
 #include <stack>
 #include <vector>
 
+using namespace CubbyCalc;
+
 std::string FormatInfix(const std::string& infix)
 {
 	std::string::const_iterator bos = infix.begin();
@@ -14,7 +16,7 @@ std::string FormatInfix(const std::string& infix)
 
 	for (std::string::const_iterator it = bos; it != eos; ++it)
 	{
-		if (std::find(operators.begin(), operators.end(), std::string(1, *it)) != operators.end() || *it == '(' || *it == ')')
+		if (std::find(OPERATORS.begin(), OPERATORS.end(), std::string(1, *it)) != OPERATORS.end() || *it == '(' || *it == ')')
 		{
 			if (it != bos && *(it - 1) != ' ' && *(formatted.end() - 1) != ' ' )
 			{
@@ -29,7 +31,7 @@ std::string FormatInfix(const std::string& infix)
 			}
 		}
 		// sin, cos, tan
-		else if (infix.size() > 3 && it < eos - 3 && std::find(operators.begin(), operators.end(), std::string(it, it + 3)) != operators.end())
+		else if (infix.size() > 3 && it < eos - 3 && std::find(OPERATORS.begin(), OPERATORS.end(), std::string(it, it + 3)) != OPERATORS.end())
 		{
 			if (it != bos && *(it - 1) != ' ' && *(formatted.end() - 1) != ' ')
 			{
@@ -73,7 +75,7 @@ std::string InfixToPostfix(const std::string& infix)
 
 	while (is >> token)
 	{
-		if (token != "(" && std::find(operators.begin(), operators.end(), token) != operators.end())
+		if (token != "(" && std::find(OPERATORS.begin(), OPERATORS.end(), token) != OPERATORS.end())
 		{
 			if (previousToken == "(")
 			{
@@ -86,7 +88,7 @@ std::string InfixToPostfix(const std::string& infix)
 			}
 			else
 			{
-				while (!operatorStack.empty() && input_priority.find(token)->second <= stack_priority.find(operatorStack.top())->second)
+				while (!operatorStack.empty() && INPUT_PRIORITY.find(token)->second <= STACK_PRIORITY.find(operatorStack.top())->second)
 				{
 					postfix += operatorStack.top() + ' ';
 					operatorStack.pop();
@@ -121,7 +123,7 @@ std::string InfixToPostfix(const std::string& infix)
 			operatorStack.pop();
 			--parenCount;
 		}
-		else if (token.find_first_not_of(operand_chars) == std::string::npos)
+		else if (token.find_first_not_of(OPERAND_CHARS) == std::string::npos)
 		{
 			if (previousToken == ")")
 			{
@@ -159,7 +161,7 @@ std::string InfixToPostfix(const std::string& infix)
 
 	if (equalPos != std::string::npos)
 	{
-		if (infix.substr(0, equalPos).find_first_not_of(identifier_chars + " " + "\t") != std::string::npos)
+		if (infix.substr(0, equalPos).find_first_not_of(ID_CHARS + " " + "\t") != std::string::npos)
 		{
 			throw InfixError("Invalid Variable");
 		}

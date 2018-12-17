@@ -20,6 +20,8 @@
 #include <string>
 #include <vector>
 
+using namespace CubbyCalc;
+
 ExpressionMaker::ExpressionMaker(VariableTable& varTable)
 	: m_isTreeGenerated(false), m_postfix(""), m_internalExpression(), m_varTable(varTable)
 { }
@@ -85,7 +87,7 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 
 			treeStack.push(new Tangent(rhs));
 		}
-		else if (std::find(operators.begin(), operators.end(), token) != operators.end())
+        else if (std::find(OPERATORS.begin(), OPERATORS.end(), token) != OPERATORS.end())
 		{
 			ExpressionTree* rhs = treeStack.top();
 			treeStack.pop();
@@ -117,15 +119,15 @@ ExpressionTree* ExpressionMaker::MakeExpressionTree(const std::string& postfix)
 				treeStack.push(new Assign(lhs, rhs, m_varTable));
 			}
 		}
-		else if (token.find_first_not_of(integer_chars) == std::string::npos)
+		else if (token.find_first_not_of(INTEGER_CHARS) == std::string::npos)
 		{
 			treeStack.push(new Integer(atoi(token.c_str())));
 		}
-		else if (token.find_first_not_of(real_chars) == std::string::npos)
+		else if (token.find_first_not_of(REAL_CHARS) == std::string::npos)
 		{
 			treeStack.push(new Real(atof(token.c_str())));
 		}
-		else if (token.find_first_not_of(identifier_chars) == std::string::npos)
+		else if (token.find_first_not_of(ID_CHARS) == std::string::npos)
 		{
 			treeStack.push(new Variable(token, m_varTable));
 		}
